@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistema de Inscripción Escolar</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#4f46e5,#06b6d4);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contenedor{
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.formulario{
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.titulo{
+    text-align: center;
+    color: #4338ca;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.nav-tabs{
+    border: none;
+}
+
+.nav-tabs .nav-link{
+    border: none;
+    color: #4338ca;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link.active{
+    background: #4338ca;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.tab-content{
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    padding: 25px;
+    border-radius: 0 0 15px 15px;
+}
+
+label{
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-control,
+.form-select{
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    background: #f8fafc;
+    height: 50px;
+    transition: .3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color: #4f46e5;
+    box-shadow: 0 0 10px rgba(79,70,229,.3);
+    background: white;
+}
+
+.btn-guardar{
+    background: linear-gradient(135deg,#4f46e5,#06b6d4);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-guardar:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79,70,229,.4);
+}
+
+
+body{
+    background: linear-gradient(135deg,#4f46e5,#06b6d4);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contenedor{
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.formulario{
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.titulo{
+    text-align: center;
+    color: #4338ca;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.nav-tabs{
+    border: none;
+}
+
+.nav-tabs .nav-link{
+    border: none;
+    color: #4338ca;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link.active{
+    background: #4338ca;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.tab-content{
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    padding: 25px;
+    border-radius: 0 0 15px 15px;
+}
+
+label{
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-control,
+.form-select{
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    background: #f8fafc;
+    height: 50px;
+    transition: .3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color: #4f46e5;
+    box-shadow: 0 0 10px rgba(79,70,229,.3);
+    background: white;
+}
+
+.btn-guardar{
+    background: linear-gradient(135deg,#4f46e5,#06b6d4);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-guardar:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79,70,229,.4);
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container contenedor">
+
+    <div class="formulario">
+
+        <h2 class="titulo">Sistema de Inscripción Escolar</h2>
+
+        <ul class="nav nav-tabs">
+
+            <li class="nav-item">
+                <button class="nav-link active"
+                        data-bs-toggle="tab"
+                        data-bs-target="#alumno">
+                    Datos del Alumno
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link"
+                        data-bs-toggle="tab"
+                        data-bs-target="#tutor">
+                    Datos del Tutor
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link"
+                        data-bs-toggle="tab"
+                        data-bs-target="#escuela">
+                    Datos de la Escuela
+                </button>
+            </li>
+
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- ALUMNO -->
+            <div class="tab-pane fade show active" id="alumno">
+
+                <h4 class="mb-4 text-primary">Datos del Alumno</h4>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label>Nombre</label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Ingrese nombre">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Apellido Paterno</label>
+                        <input type="text"  id="Paterno" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Apellido Materno</label>
+                        <input type="text"  id="materno" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Celular</label>
+                        <input type="tel"  id="Celular" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Correo</label>
+                        <input type="email" id="correo" class="form-control">
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label>Edad</label>
+                        <input type="number"  id="edad" class="form-control">
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label>Promedio</label>
+                        <input type="number"   id="promedio" step="0.1" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Grado Escolar</label>
+                        <input type="text"  id="grado" class="form-control">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TUTOR -->
+            <div class="tab-pane fade" id="tutor">
+
+                <h4 class="mb-4 text-primary">Datos del Tutor</h4>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="nombreTutor" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Ocupación</label>
+                        <input type="text"  id="ocupacion" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Teléfono Casa</label>
+                        <input type="tel"  id="telefonoCasa" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Teléfono Emergencia</label>
+                        <input type="tel" id="telefonoEmergencia" class="form-control">
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label>Dirección</label>
+                        <input type="text" id="direccionTutor" class="form-control">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ESCUELA -->
+<div class="tab-pane fade" id="escuela">
+
+    <h4 class="mb-4 text-primary">Datos de la Escuela</h4>
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+            <label>Nombre de la Escuela</label>
+            <input type="text" id="nombreEscuela" class="form-control"
+                value="EMSAD 012">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label>Nombre del Director</label>
+            <input type="text" id="nombreDirector" class="form-control"
+                value="Daniel Flores">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label>Nivel Educativo</label>
+            <input type="text" id="nivelEducativo" class="form-control"
+                value="Media Superior">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label>Clave del Centro</label>
+            <input type="text" id="claveCentro" class="form-control"
+                value="21DPR1234A">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label>Turno</label>
+            <select class="form-select">
+                <option selected>Matutino</option>
+                <option>Vespertino</option>
+                <option>Nocturno</option>
+            </select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label>Teléfono</label>
+            <input type="tel" id="telefono" class="form-control">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label>Correo Electrónico</label>
+            <input type="email" id="correoElectronico" class="form-control"
+                value="escuela@ejemplo.com">
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label>Dirección</label>
+            <input type="text" id="direccion" class="form-control"
+                value="El Tejocote">
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn-guardar" onclick="guardarRegistro()">
+                💾 Guardar Registro
+            </button>
+
+            <a href="reporte.html" class="btn btn-success ms-2">
+                📋 Ver Reporte
+            </a>
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function guardarRegistro(){
+
+    let registros = JSON.parse(localStorage.getItem("registros")) || [];
+
+    const datos = {
+
+        nombre: document.getElementById("nombre").value,
+        paterno: document.getElementById("Paterno").value,
+        materno: document.getElementById("materno").value,
+        celular: document.getElementById("Celular").value,
+       correo: document.getElementById("correo").value,
+        edad: document.getElementById("edad").value,
+        promedio: document.getElementById("promedio").value,
+        grado: document.getElementById("grado").value,
+
+        nombreTutor: document.getElementById("nombreTutor").value,
+        ocupacion: document.getElementById("ocupacion").value,
+        telefonoCasa: document.getElementById("telefonoCasa").value,
+        telefonoEmergencia: document.getElementById("telefonoEmergencia").value,
+        direccionTutor: document.getElementById("direccionTutor").value,
+
+        nombreEscuela: document.getElementById("nombreEscuela").value,
+        nombreDirector: document.getElementById("nombreDirector").value,
+        nivelEducativo: document.getElementById("nivelEducativo").value,
+        claveCentro: document.getElementById("claveCentro").value,
+        turno: document.querySelector("#escuela select").value,
+        telefono: document.getElementById("telefono").value,
+        correoElectronico: document.getElementById("correoElectronico").value,
+        direccion: document.getElementById("direccion").value,
+
+        fecha: new Date().toLocaleString()
+    };
+
+    registros.push(datos);
+
+    localStorage.setItem("registros", JSON.stringify(registros));
+
+    alert("Registro guardado correctamente");
+    document.querySelectorAll("input").forEach(input => {
+    if (!input.hasAttribute("value")) {
+        input.value = "";
+    }
+});
+}
+</script>
+</body>
+</html>
